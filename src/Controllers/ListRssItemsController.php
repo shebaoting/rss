@@ -14,6 +14,8 @@ class ListRssItemsController extends AbstractListController
 
     protected function data(ServerRequestInterface $request, Document $document)
     {
-        return RssItem::all(); // 或者根据需要筛选
+        return RssItem::with('feed')
+            ->orderBy('published_at', 'desc')
+            ->get();
     }
 }

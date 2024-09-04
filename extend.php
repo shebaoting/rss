@@ -19,7 +19,10 @@ use Shebaoting\Rss\Controllers\ListRssItemsController;
 return [
     (new Extend\Frontend('forum'))
         ->js(__DIR__ . '/js/dist/forum.js')
-        ->css(__DIR__ . '/less/forum.less'),
+        ->css(__DIR__ . '/less/forum.less')
+        ->route('/rss', 'rss.feed', function (Document $document, $request) {
+            $document->title = 'RSS Aggregator'; // 设置页面标题
+        }),
     (new Extend\Frontend('admin'))
         ->js(__DIR__ . '/js/dist/admin.js')
         ->css(__DIR__ . '/less/admin.less'),
