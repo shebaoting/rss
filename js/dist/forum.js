@@ -121,6 +121,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/forum/components/IndexPage */ "flarum/forum/components/IndexPage");
 /* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _RssFeedList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RssFeedList */ "./src/forum/components/RssFeedList.js");
+/* harmony import */ var _RssToolbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RssToolbar */ "./src/forum/components/RssToolbar.js");
+
 
 
 
@@ -148,185 +150,160 @@ var RssFeedPage = /*#__PURE__*/function (_Page) {
       className: "IndexPage-nav sideNav"
     }, m("ul", null, flarum_common_helpers_listItems__WEBPACK_IMPORTED_MODULE_3___default()(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default().prototype.sidebarItems().toArray())), " "), m("div", {
       className: "RssFeedListContent IndexPage-results sideNavOffset"
-    }, m("div", {
-      "class": "IndexPage-toolbar",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("ul", {
-      "class": "IndexPage-toolbar-view",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("li", {
-      "class": "item-sort",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("div", {
-      "class": "ButtonGroup Dropdown dropdown  itemCount6",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("button", {
-      "class": "Dropdown-toggle Button",
-      "aria-haspopup": "menu",
-      "aria-label": "\u66F4\u6539\u300C\u5168\u90E8\u4E3B\u9898\u300D\u6392\u5E8F",
-      "data-toggle": "dropdown",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("span", {
-      "class": "Button-label",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, "\u6700\u65B0\u56DE\u590D"), m("i", {
-      "aria-hidden": "true",
-      "class": "icon fas fa-caret-down Button-caret",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    })), m("ul", {
-      "class": "Dropdown-menu dropdown-menu ",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button",
-      active: ""
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon fas fa-check Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u6700\u65B0\u56DE\u590D"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u70ED\u95E8\u4E3B\u9898"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u65B0\u9C9C\u51FA\u7089"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u9648\u5E74\u65E7\u8D34"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u6700\u591A\u7FFB\u9605"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u6700\u5C11\u7FFB\u9605")))))), m("li", {
-      "class": "item-solved-filter",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("div", {
-      "class": "ButtonGroup Dropdown dropdown  itemCount3",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("button", {
-      "class": "Dropdown-toggle Button",
-      "aria-haspopup": "menu",
-      "aria-label": "\u5DF2\u89E3\u51B3/\u672A\u89E3\u51B3",
-      "data-toggle": "dropdown",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("span", {
-      "class": "Button-label",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, "\u5168\u90E8\u95EE\u9898"), m("i", {
-      "aria-hidden": "true",
-      "class": "icon fas fa-caret-down Button-caret",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    })), m("ul", {
-      "class": "Dropdown-menu dropdown-menu ",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button",
-      active: ""
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon fas fa-check Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u5168\u90E8\u95EE\u9898"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u5DF2\u89E3\u51B3"))), m("li", {
-      "class": ""
-    }, m("button", {
-      "class": "hasIcon",
-      type: "button"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon Button-icon"
-    }), m("span", {
-      "class": "Button-label"
-    }, "\u7B49\u5F85\u89E3\u51B3"))))))), m("ul", {
-      "class": "IndexPage-toolbar-action",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("li", {
-      "class": "item-refresh",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("button", {
-      "class": "Button Button--icon hasIcon",
-      type: "button",
-      "aria-label": "\u5237\u65B0",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon fas fa-sync Button-icon",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }), m("span", {
-      "class": "Button-label",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }))), m("li", {
-      "class": "item-markAllAsRead",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("button", {
-      "class": "Button Button--icon hasIcon",
-      type: "button",
-      "aria-label": "\u5168\u90E8\u5DF2\u8BFB",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }, m("i", {
-      "aria-hidden": "true",
-      "class": "icon fas fa-check Button-icon",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }), m("span", {
-      "class": "Button-label",
-      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
-    }))))), m(_RssFeedList__WEBPACK_IMPORTED_MODULE_5__["default"], null), " "))));
+    }, m(_RssToolbar__WEBPACK_IMPORTED_MODULE_6__["default"], null), m(_RssFeedList__WEBPACK_IMPORTED_MODULE_5__["default"], null), " "))));
   };
   return RssFeedPage;
 }((flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_2___default()));
+
+
+/***/ }),
+
+/***/ "./src/forum/components/RssSubmitModal.js":
+/*!************************************************!*\
+  !*** ./src/forum/components/RssSubmitModal.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RssSubmitModal)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var flarum_common_components_Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/common/components/Modal */ "flarum/common/components/Modal");
+/* harmony import */ var flarum_common_components_Modal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_common_components_Modal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/common/components/Button */ "flarum/common/components/Button");
+/* harmony import */ var flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var RssSubmitModal = /*#__PURE__*/function (_Modal) {
+  function RssSubmitModal() {
+    return _Modal.apply(this, arguments) || this;
+  }
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(RssSubmitModal, _Modal);
+  var _proto = RssSubmitModal.prototype;
+  _proto.oninit = function oninit(vnode) {
+    _Modal.prototype.oninit.call(this, vnode);
+    this.url = ''; // 使用 url 代替 link
+    this.siteTitle = ''; // 使用 siteTitle 代替 title
+  };
+  _proto.className = function className() {
+    return 'RssSubmitModal Modal--small';
+  };
+  _proto.title = function title() {
+    return '提交 RSS 站点';
+  };
+  _proto.content = function content() {
+    var _this = this;
+    return m("div", {
+      className: "Modal-body"
+    }, m("div", {
+      className: "Form-group"
+    }, m("label", null, "\u7AD9\u70B9\u540D\u79F0"), m("input", {
+      className: "FormControl",
+      placeholder: "\u8BF7\u8F93\u5165\u7AD9\u70B9\u540D\u79F0",
+      value: this.siteTitle,
+      oninput: function oninput(e) {
+        _this.siteTitle = e.target.value; // 捕获站点名称
+      }
+    })), m("div", {
+      className: "Form-group"
+    }, m("label", null, "RSS \u94FE\u63A5"), m("input", {
+      className: "FormControl",
+      placeholder: "\u8BF7\u8F93\u5165 RSS \u94FE\u63A5",
+      value: this.url // 使用 url 代替 link
+      ,
+      oninput: function oninput(e) {
+        _this.url = e.target.value; // 捕获 RSS 链接
+      }
+    })), m("div", {
+      className: "Form-group"
+    }, m((flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2___default()), {
+      className: "Button Button--primary",
+      onclick: this.onsubmit.bind(this),
+      loading: this.loading
+    }, "\u63D0\u4EA4")));
+  };
+  _proto.onsubmit = function onsubmit(e) {
+    var _this2 = this;
+    e.preventDefault();
+    this.loading = true;
+    app.request({
+      method: 'POST',
+      url: app.forum.attribute('apiUrl') + '/rss-feeds',
+      body: {
+        url: this.url,
+        // 提交 URL 而不是 link
+        title: this.siteTitle
+      }
+    }).then(function () {
+      _this2.loading = false;
+      app.alerts.show({
+        type: 'success'
+      }, 'RSS 站点已成功提交！');
+      _this2.hide();
+      m.redraw();
+    })["catch"](function () {
+      _this2.loading = false;
+      app.alerts.show({
+        type: 'error'
+      }, '提交失败，请重试。');
+      m.redraw();
+    });
+  };
+  return RssSubmitModal;
+}((flarum_common_components_Modal__WEBPACK_IMPORTED_MODULE_1___default()));
+
+
+/***/ }),
+
+/***/ "./src/forum/components/RssToolbar.js":
+/*!********************************************!*\
+  !*** ./src/forum/components/RssToolbar.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RssToolbar)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var flarum_common_Component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/common/Component */ "flarum/common/Component");
+/* harmony import */ var flarum_common_Component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_common_Component__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flarum/common/components/Button */ "flarum/common/components/Button");
+/* harmony import */ var flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var flarum_forum_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! flarum/forum/app */ "flarum/forum/app");
+/* harmony import */ var flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_app__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _RssSubmitModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RssSubmitModal */ "./src/forum/components/RssSubmitModal.js");
+
+
+
+
+ // 引入自定义 Modal
+var RssToolbar = /*#__PURE__*/function (_Component) {
+  function RssToolbar() {
+    return _Component.apply(this, arguments) || this;
+  }
+  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(RssToolbar, _Component);
+  var _proto = RssToolbar.prototype;
+  _proto.view = function view() {
+    return m("div", {
+      className: "IndexPage-toolbar rss-subsec"
+    }, m("ul", {
+      className: "IndexPage-toolbar-action"
+    }, m("li", {
+      className: "item-markAllAsRead"
+    }, m((flarum_common_components_Button__WEBPACK_IMPORTED_MODULE_2___default()), {
+      className: "Button hasIcon",
+      onclick: function onclick() {
+        return flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().modal.show(_RssSubmitModal__WEBPACK_IMPORTED_MODULE_4__["default"]);
+      } // 点击按钮时显示 Modal
+    }, "\u63D0\u4EA4\u7AD9\u70B9"))));
+  };
+  return RssToolbar;
+}((flarum_common_Component__WEBPACK_IMPORTED_MODULE_1___default()));
 
 
 /***/ }),
@@ -402,6 +379,28 @@ module.exports = flarum.core.compat['common/Component'];
 
 "use strict";
 module.exports = flarum.core.compat['common/app'];
+
+/***/ }),
+
+/***/ "flarum/common/components/Button":
+/*!*****************************************************************!*\
+  !*** external "flarum.core.compat['common/components/Button']" ***!
+  \*****************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = flarum.core.compat['common/components/Button'];
+
+/***/ }),
+
+/***/ "flarum/common/components/Modal":
+/*!****************************************************************!*\
+  !*** external "flarum.core.compat['common/components/Modal']" ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = flarum.core.compat['common/components/Modal'];
 
 /***/ }),
 

@@ -7,7 +7,10 @@
     "type": "flarum-extension",
     "license": "MIT",
     "require": {
-        "flarum/core": "^1.2.0"
+        "flarum/core": "^1.2.0",
+        "debril/feed-io": "^6.0",
+        "php-http/guzzle7-adapter": "^1.0",
+        "guzzlehttp/guzzle": "^7.9"
     },
     "authors": [
         {
@@ -74,5 +77,10 @@
     },
     "require-dev": {
         "flarum/testing": "^1.0.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }

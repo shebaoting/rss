@@ -30,5 +30,6 @@ return [
     (new Extend\Console())
         ->command(\Shebaoting\Rss\Console\FetchRssFeeds::class),
     (new Extend\Routes('api'))
-        ->get('/rss-items', 'rss.items.index', ListRssItemsController::class),
+        ->get('/rss-items', 'rss.items.index', ListRssItemsController::class)
+        ->post('/rss-feeds', 'rss.feeds.create', \Shebaoting\Rss\Controllers\CreateRssFeedController::class),
 ];
