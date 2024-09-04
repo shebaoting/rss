@@ -148,7 +148,182 @@ var RssFeedPage = /*#__PURE__*/function (_Page) {
       className: "IndexPage-nav sideNav"
     }, m("ul", null, flarum_common_helpers_listItems__WEBPACK_IMPORTED_MODULE_3___default()(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default().prototype.sidebarItems().toArray())), " "), m("div", {
       className: "RssFeedListContent IndexPage-results sideNavOffset"
-    }, m(_RssFeedList__WEBPACK_IMPORTED_MODULE_5__["default"], null), " "))));
+    }, m("div", {
+      "class": "IndexPage-toolbar",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("ul", {
+      "class": "IndexPage-toolbar-view",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("li", {
+      "class": "item-sort",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("div", {
+      "class": "ButtonGroup Dropdown dropdown  itemCount6",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("button", {
+      "class": "Dropdown-toggle Button",
+      "aria-haspopup": "menu",
+      "aria-label": "\u66F4\u6539\u300C\u5168\u90E8\u4E3B\u9898\u300D\u6392\u5E8F",
+      "data-toggle": "dropdown",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("span", {
+      "class": "Button-label",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, "\u6700\u65B0\u56DE\u590D"), m("i", {
+      "aria-hidden": "true",
+      "class": "icon fas fa-caret-down Button-caret",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    })), m("ul", {
+      "class": "Dropdown-menu dropdown-menu ",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button",
+      active: ""
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon fas fa-check Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u6700\u65B0\u56DE\u590D"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u70ED\u95E8\u4E3B\u9898"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u65B0\u9C9C\u51FA\u7089"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u9648\u5E74\u65E7\u8D34"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u6700\u591A\u7FFB\u9605"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u6700\u5C11\u7FFB\u9605")))))), m("li", {
+      "class": "item-solved-filter",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("div", {
+      "class": "ButtonGroup Dropdown dropdown  itemCount3",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("button", {
+      "class": "Dropdown-toggle Button",
+      "aria-haspopup": "menu",
+      "aria-label": "\u5DF2\u89E3\u51B3/\u672A\u89E3\u51B3",
+      "data-toggle": "dropdown",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("span", {
+      "class": "Button-label",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, "\u5168\u90E8\u95EE\u9898"), m("i", {
+      "aria-hidden": "true",
+      "class": "icon fas fa-caret-down Button-caret",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    })), m("ul", {
+      "class": "Dropdown-menu dropdown-menu ",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button",
+      active: ""
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon fas fa-check Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u5168\u90E8\u95EE\u9898"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u5DF2\u89E3\u51B3"))), m("li", {
+      "class": ""
+    }, m("button", {
+      "class": "hasIcon",
+      type: "button"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon Button-icon"
+    }), m("span", {
+      "class": "Button-label"
+    }, "\u7B49\u5F85\u89E3\u51B3"))))))), m("ul", {
+      "class": "IndexPage-toolbar-action",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("li", {
+      "class": "item-refresh",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("button", {
+      "class": "Button Button--icon hasIcon",
+      type: "button",
+      "aria-label": "\u5237\u65B0",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon fas fa-sync Button-icon",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }), m("span", {
+      "class": "Button-label",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }))), m("li", {
+      "class": "item-markAllAsRead",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("button", {
+      "class": "Button Button--icon hasIcon",
+      type: "button",
+      "aria-label": "\u5168\u90E8\u5DF2\u8BFB",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }, m("i", {
+      "aria-hidden": "true",
+      "class": "icon fas fa-check Button-icon",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }), m("span", {
+      "class": "Button-label",
+      "data-immersive-translate-walked": "996bfd72-70eb-417c-bb6b-a44c582ca53f"
+    }))))), m(_RssFeedList__WEBPACK_IMPORTED_MODULE_5__["default"], null), " "))));
   };
   return RssFeedPage;
 }((flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_2___default()));
