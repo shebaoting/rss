@@ -1,7 +1,20 @@
 shebaoting-rss:
-  # For more details on the format
-  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
   admin:
-    my_cool_key: My Cool Key
+    page:
+      title: "RSS Aggregator Settings"  # 后台设置页面的标题
+      heading:
+        title: "RSS Feed Title"         # 表头: RSS 站点标题
+        url: "RSS Feed URL"             # 表头: RSS 站点链接
+        status: "Approval Status"       # 表头: 审核状态
+        actions: "Actions"              # 表头: 操作
+      delete: "Delete"                  # 删除按钮文本
+      new_title: "New RSS Feed Title"   # 新 RSS 站点标题输入框的占位符
+      new_url: "New RSS Feed URL"       # 新 RSS 站点 URL 输入框的占位符
+      add_new: "Add New RSS Feed"       # 添加新 RSS 按钮文本
+      status_pending: "Pending"         # 状态: 待审核
+      status_approved: "Approved"       # 状态: 已审核
 
   forum:
+    rss_link: "RSS Feeds"               # 前端导航栏上的 RSS 链接文本
+    page_title: "RSS Feed Aggregator"   # 前端 RSS 聚合页面的标题
+    submit_feed_button: "Submit RSS Feed" # 提交 RSS 按钮文本

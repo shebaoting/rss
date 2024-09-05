@@ -15,6 +15,10 @@ use Flarum\Extend;
 use Flarum\Frontend\Document;
 use Illuminate\Console\Scheduling\Schedule;
 use Shebaoting\Rss\Controllers\ListRssItemsController;
+use Shebaoting\Rss\Controllers\CreateRssFeedController;
+use Shebaoting\Rss\Controllers\ListRssFeedsController;
+use Shebaoting\Rss\Controllers\UpdateRssFeedController;
+use Shebaoting\Rss\Controllers\DeleteRssFeedController;
 
 return [
     (new Extend\Frontend('forum'))
@@ -31,5 +35,9 @@ return [
         ->command(\Shebaoting\Rss\Console\FetchRssFeeds::class),
     (new Extend\Routes('api'))
         ->get('/rss-items', 'rss.items.index', ListRssItemsController::class)
-        ->post('/rss-feeds', 'rss.feeds.create', \Shebaoting\Rss\Controllers\CreateRssFeedController::class),
+        ->post('/rss-feeds', 'rss.feeds.create', CreateRssFeedController::class)
+        ->get('/rss-feeds', 'rssfeeds.index', ListRssFeedsController::class)
+        // 添加处理单个 RSS Feed 的路由
+        ->patch('/rss-feeds/{id}', 'rss.feeds.update', UpdateRssFeedController::class)
+        ->delete('/rss-feeds/{id}', 'rss.feeds.delete', DeleteRssFeedController::class),
 ];

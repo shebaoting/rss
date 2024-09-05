@@ -1,0 +1,32 @@
+.RssFeedTable {
+  width: 100%; // 设置表格宽度为 100%
+
+  td {
+    border-bottom:none;
+  }
+  th, td {
+    text-align: center; // 让表头和表格内容居中
+    padding: 10px; // 增加一些填充，让表格看起来更美观
+    .Checkbox {padding: 0;}
+  }
+
+  td.status {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+  }
+
+  th {
+    font-weight: bold; // 让表头加粗
+  }
+
+  td input {
+    width: 90%; // 让输入框占用单元格的大部分空间
+    text-align: center; // 让输入框内的文字居中
+  }
+
+  .Checkbox--switch {
+    --left-pad:0;
+    --right-pad:0;
+    padding-left: 0; /* 移除 padding-left 以避免对齐问题 */
+  }
+}
