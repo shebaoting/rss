@@ -19,6 +19,7 @@ use Shebaoting\Rss\Controllers\CreateRssFeedController;
 use Shebaoting\Rss\Controllers\ListRssFeedsController;
 use Shebaoting\Rss\Controllers\UpdateRssFeedController;
 use Shebaoting\Rss\Controllers\DeleteRssFeedController;
+use Shebaoting\Rss\Controllers\ListUserRssFeedsController;
 
 return [
     (new Extend\Frontend('forum'))
@@ -34,6 +35,7 @@ return [
     (new Extend\Console())
         ->command(\Shebaoting\Rss\Console\FetchRssFeeds::class),
     (new Extend\Routes('api'))
+        ->get('/user-rss-feeds', 'rss.userfeeds.index', ListUserRssFeedsController::class) // 新增此行
         ->get('/rss-items', 'rss.items.index', ListRssItemsController::class)
         ->post('/rss-feeds', 'rss.feeds.create', CreateRssFeedController::class)
         ->get('/rss-feeds', 'rssfeeds.index', ListRssFeedsController::class)

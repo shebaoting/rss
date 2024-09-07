@@ -14,8 +14,9 @@ class ListRssItemsController extends AbstractListController
 
     protected function data(ServerRequestInterface $request, Document $document)
     {
-        return RssItem::with('feed')
-            ->orderBy('published_at', 'desc')
-            ->get();
+        // 仅获取状态为 'approved' 的站点的文章
+        return RssItem::whereHas('feed', function ($query) {
+            $query->where('status', 'approved');
+        })->with('feed')->orderBy('published_at', 'desc')->get();
     }
 }

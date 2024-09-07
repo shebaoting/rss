@@ -42,12 +42,15 @@ export default class RssSettingsPage extends ExtensionPage {
               {rssFeeds.map((feed) => (
                 <tr key={feed.id()}>
                   <td>
-                    <input
-                      className="FormControl"
-                      type="text"
-                      value={feed.title()}
-                      oninput={withAttr('value', (value) => this.updateFeed(feed, 'title', value))}
-                    />
+                    <td>
+                      <input
+                        className="FormControl"
+                        type="text"
+                        value={feed.title()}
+                        oninput={withAttr('value', (value) => feed.pushAttributes({ title: value }))} // 只更新本地值
+                        onblur={withAttr('value', (value) => this.updateFeed(feed, 'title', value))} // 失去焦点时发送请求
+                      />
+                    </td>
                   </td>
                   <td>
                     <input
