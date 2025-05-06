@@ -109,6 +109,13 @@ export default class RssSubmitModal extends Modal {
     this.loading = true;
     console.log('[RssSubmitModal] Submitting form with URL:', this.url, 'and siteTitle:', this.siteTitle);
 
+    // 检查是否为空
+    if (!this.url || !this.siteTitle) {
+      app.alerts.show({ type: 'error' }, 'RSS 链接和站点名称不能为空');
+      this.loading = false;
+      return;
+    }
+
     const method = this.feedId ? 'PATCH' : 'POST'; // 如果有 feedId，则更新，否则创建
     const apiUrl = this.feedId ? app.forum.attribute('apiUrl') + `/rss-feeds/${this.feedId}` : app.forum.attribute('apiUrl') + '/rss-feeds';
 

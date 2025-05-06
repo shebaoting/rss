@@ -13,13 +13,14 @@ namespace Shebaoting\Rss;
 
 use Flarum\Extend;
 use Flarum\Frontend\Document;
-use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Console\Scheduling\Event;
 use Shebaoting\Rss\Controllers\ListRssItemsController;
 use Shebaoting\Rss\Controllers\CreateRssFeedController;
 use Shebaoting\Rss\Controllers\ListRssFeedsController;
 use Shebaoting\Rss\Controllers\UpdateRssFeedController;
 use Shebaoting\Rss\Controllers\DeleteRssFeedController;
 use Shebaoting\Rss\Controllers\ListUserRssFeedsController;
+use Shebaoting\Rss\Console\FetchRssFeeds;
 
 return [
     (new Extend\Frontend('forum'))
@@ -33,7 +34,10 @@ return [
         ->css(__DIR__ . '/less/admin.less'),
     new Extend\Locales(__DIR__ . '/locale'),
     (new Extend\Console())
-        ->command(\Shebaoting\Rss\Console\FetchRssFeeds::class),
+        ->command(FetchRssFeeds::class)
+        ->schedule('rss:fetch', function (Event $event) {
+            $event->hourly();  // 每小时执行一次
+        }),
     (new Extend\Routes('api'))
         ->get('/user-rss-feeds', 'rss.userfeeds.index', ListUserRssFeedsController::class) // 新增此行
         ->get('/rss-items', 'rss.items.index', ListRssItemsController::class)

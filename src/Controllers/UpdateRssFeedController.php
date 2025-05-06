@@ -15,6 +15,7 @@ class UpdateRssFeedController extends AbstractShowController
 
     protected function data(ServerRequestInterface $request, Document $document)
     {
+        app('log')->info('Request Body: ' . json_encode($request->getParsedBody()));
         // 获取 Feed ID
         $feedId = Arr::get($request->getQueryParams(), 'id');
 

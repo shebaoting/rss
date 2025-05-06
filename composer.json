@@ -1,6 +1,7 @@
 {
     "name": "shebaoting/rss",
     "description": "A Flarum extension that aggregates and displays RSS/Atom feeds.",
+    "version": "0.3.1",
     "keywords": [
         "flarum"
     ],
