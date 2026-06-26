@@ -14,11 +14,8 @@ namespace Shebaoting\Rss;
 use Flarum\Extend;
 use Flarum\Frontend\Document;
 use Illuminate\Console\Scheduling\Event;
-use Shebaoting\Rss\Controllers\ListRssItemsController;
-use Shebaoting\Rss\Controllers\CreateRssFeedController;
-use Shebaoting\Rss\Controllers\ListRssFeedsController;
-use Shebaoting\Rss\Controllers\UpdateRssFeedController;
-use Shebaoting\Rss\Controllers\DeleteRssFeedController;
+use Shebaoting\Rss\Api\Resource\RssFeedResource;
+use Shebaoting\Rss\Api\Resource\RssItemResource;
 use Shebaoting\Rss\Controllers\ListUserRssFeedsController;
 use Shebaoting\Rss\Console\FetchRssFeeds;
 
@@ -27,23 +24,36 @@ return [
         ->js(__DIR__ . '/js/dist/forum.js')
         ->css(__DIR__ . '/less/forum.less')
         ->route('/rss', 'rss.feed', function (Document $document, $request) {
-            $document->title = 'RSS Aggregator'; // 设置页面标题
+            $document->title = 'RSS Aggregator';
+        })
+        ->route('/rss/item/{id}', 'rss.item', function (Document $document, $request) {
+            $document->title = 'RSS Article';
         }),
+
     (new Extend\Frontend('admin'))
         ->js(__DIR__ . '/js/dist/admin.js')
         ->css(__DIR__ . '/less/admin.less'),
+
     new Extend\Locales(__DIR__ . '/locale'),
+
+    new Extend\ApiResource(RssFeedResource::class),
+    new Extend\ApiResource(RssItemResource::class),
+
+    (new Extend\Settings())
+        ->default('shebaoting-rss.show_on_index', false)
+        ->default('shebaoting-rss.materialized_tag_id', '')
+        ->serializeToForum('shebaoting-rss.show_on_index', 'shebaoting-rss.show_on_index', 'boolval')
+        ->serializeToForum('shebaoting-rss.materialized_tag_id', 'shebaoting-rss.materialized_tag_id'),
+
+    (new Extend\User())
+        ->registerPreference('shebaotingRssShowOnIndex', 'boolval', true),
+
     (new Extend\Console())
         ->command(FetchRssFeeds::class)
         ->schedule('rss:fetch', function (Event $event) {
-            $event->hourly();  // 每小时执行一次
+            $event->hourly();
         }),
+
     (new Extend\Routes('api'))
-        ->get('/user-rss-feeds', 'rss.userfeeds.index', ListUserRssFeedsController::class) // 新增此行
-        ->get('/rss-items', 'rss.items.index', ListRssItemsController::class)
-        ->post('/rss-feeds', 'rss.feeds.create', CreateRssFeedController::class)
-        ->get('/rss-feeds', 'rssfeeds.index', ListRssFeedsController::class)
-        // 添加处理单个 RSS Feed 的路由
-        ->patch('/rss-feeds/{id}', 'rss.feeds.update', UpdateRssFeedController::class)
-        ->delete('/rss-feeds/{id}', 'rss.feeds.delete', DeleteRssFeedController::class),
+        ->get('/user-rss-feeds', 'rss.userfeeds.index', ListUserRssFeedsController::class),
 ];

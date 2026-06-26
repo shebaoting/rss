@@ -3,3 +3,106 @@
   line-height: 50px;
   height: 40px;
 }
+
+.RssFeedPage .Page-content {
+  min-width: 0;
+}
+
+.RssFeedList .DiscussionListItem-main {
+  display: block;
+}
+
+.RssFeedList-loadMore {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.RssDiscussionListItem {
+  .RssDiscussionListItem-authorAvatar {
+    text-decoration: none;
+  }
+
+  .RssDiscussionListItem-avatar {
+    align-items: center;
+    color: #fff;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 700;
+    height: 36px;
+    justify-content: center;
+    line-height: 36px;
+    text-transform: uppercase;
+    width: 36px;
+  }
+
+  .RssDiscussionListItem-main {
+    display: block;
+  }
+
+  .RssDiscussionListItem-tag {
+    max-width: 180px;
+
+    .TagLabel-text {
+      min-width: 0;
+    }
+
+    .TagLabel-name {
+      display: inline-block;
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+      white-space: nowrap;
+    }
+  }
+
+  .RssDiscussionListItem-stats {
+    color: var(--muted-color);
+  }
+
+  .RssDiscussionListItem-comments {
+    text-decoration: none;
+  }
+}
+
+.RssMixedDiscussionList {
+  .RssDiscussionListItem .DiscussionListItem-content {
+    cursor: pointer;
+  }
+}
+
+.RssItemHero-site {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  gap: 6px;
+  opacity: .82;
+}
+
+.RssItemPost-avatar {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.RssItemPost-source {
+  word-break: break-all;
+}
+
+.RssItemReplyComposer {
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .Post-footer ul {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+  }
+}

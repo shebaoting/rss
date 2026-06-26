@@ -11,6 +11,11 @@ class RssFeed extends AbstractModel
 
     protected $fillable = ['url', 'title', 'user_id', 'status'];
 
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

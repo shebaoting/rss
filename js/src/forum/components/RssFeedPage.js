@@ -1,31 +1,26 @@
 import app from 'flarum/forum/app';
 import Page from 'flarum/common/components/Page';
-import listItems from 'flarum/common/helpers/listItems';
-import IndexPage from 'flarum/forum/components/IndexPage';
+import PageStructure from 'flarum/forum/components/PageStructure';
+import IndexSidebar from 'flarum/forum/components/IndexSidebar';
+import WelcomeHero from 'flarum/forum/components/WelcomeHero';
 import RssFeedList from './RssFeedList';
 import RssToolbar from './RssToolbar';
+
 export default class RssFeedPage extends Page {
   oninit(vnode) {
     super.oninit(vnode);
-    app.setTitle('RSS Aggregator'); // 设置页面标题
+    app.setTitle(app.translator.trans('shebaoting-rss.forum.page_title'));
+    this.bodyClass = 'App--index';
   }
 
   view() {
     return (
-      <div className="IndexPage">
-        {IndexPage.prototype.hero()} {/* 复用 IndexPage 的头部样式 */}
-        <div className="container">
-          <div className="sideNavContainer">
-            <nav className="IndexPage-nav sideNav">
-              <ul>{listItems(IndexPage.prototype.sidebarItems().toArray())}</ul> {/* 保留侧边栏 */}
-            </nav>
-            <div className="RssFeedListContent IndexPage-results sideNavOffset">
-              <RssToolbar />
-              <RssFeedList /> {/* 显示 RSS 列表 */}
-            </div>
-          </div>
+      <PageStructure className="IndexPage RssFeedPage" hero={() => <WelcomeHero />} sidebar={() => <IndexSidebar />}>
+        <div className="RssFeedListContent IndexPage-results">
+          <RssToolbar />
+          <RssFeedList />
         </div>
-      </div>
+      </PageStructure>
     );
   }
 }

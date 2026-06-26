@@ -8,6 +8,7 @@ use Http\Adapter\Guzzle7\Client as GuzzleAdapter;
 use GuzzleHttp\Client as GuzzleClient;
 use Psr\Log\NullLogger;
 use Illuminate\Console\Command;
+use Illuminate\Support\Carbon;
 use Shebaoting\Rss\Models\RssFeed;
 use Shebaoting\Rss\Models\RssItem;
 
@@ -72,7 +73,7 @@ class FetchRssFeeds extends Command
                             'rss_feed_id' => $rssFeedId,
                             'title' => $item->getTitle(),
                             'content' => $content ?: '', // 如果 content 为空，则设置为空字符串
-                            'published_at' => $item->getLastModified(),
+                            'published_at' => $item->getLastModified() ?: Carbon::now(),
                         ]
                     );
                     $this->info("Stored item with title: {$item->getTitle()}");

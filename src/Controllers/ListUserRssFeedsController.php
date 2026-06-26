@@ -2,22 +2,38 @@
 
 namespace Shebaoting\Rss\Controllers;
 
-use Flarum\Api\Controller\AbstractListController;
+use Flarum\Http\RequestUtil;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Tobscure\JsonApi\Document;
+use Psr\Http\Server\RequestHandlerInterface;
 use Shebaoting\Rss\Models\RssFeed;
-use Shebaoting\Rss\Serializers\RssFeedSerializer;
 
-class ListUserRssFeedsController extends AbstractListController
+use function Tobyz\JsonApiServer\json_api_response;
+
+class ListUserRssFeedsController implements RequestHandlerInterface
 {
-    public $serializer = RssFeedSerializer::class; // 使用现有的 RssFeedSerializer
-
-    protected function data(ServerRequestInterface $request, Document $document)
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        // 获取当前登录的用户
-        $actor = $request->getAttribute('actor');
+        $actor = RequestUtil::getActor($request);
 
-        // 返回当前用户的 RSS Feed
-        return RssFeed::where('user_id', $actor->id)->get();
+        $actor->assertRegistered();
+
+        $feeds = RssFeed::where('user_id', $actor->id)
+            ->orderByDesc('created_at')
+            ->get()
+            ->map(fn (RssFeed $feed) => [
+                'type' => 'rss-feeds',
+                'id' => (string) $feed->id,
+                'attributes' => [
+                    'title' => $feed->title,
+                    'url' => $feed->url,
+                    'user_id' => $feed->user_id,
+                    'status' => $feed->status,
+                    'created_at' => $feed->created_at?->toJSON(),
+                ],
+            ])
+            ->all();
+
+        return json_api_response(['data' => $feeds]);
     }
 }

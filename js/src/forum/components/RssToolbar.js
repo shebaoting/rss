@@ -10,10 +10,11 @@ export default class RssToolbar extends Component {
         <ul className="IndexPage-toolbar-action">
           <li className="item-markAllAsRead">
             <Button
-              className="Button hasIcon"
-              onclick={() => app.modal.show(RssSubmitModal)} // 点击按钮时显示 Modal
+              className="Button"
+              icon="fas fa-plus"
+              onclick={() => app.modal.show(RssSubmitModal)}
             >
-              提交站点
+              {app.translator.trans('shebaoting-rss.forum.submit_feed_button')}
             </Button>
           </li>
         </ul>
