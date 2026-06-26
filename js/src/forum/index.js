@@ -93,7 +93,7 @@ function extendSettingsRoute() {
   };
 }
 
-app.initializers.add('shebaoting/rss', () => {
+app.initializers.add('shebaoting-rss', () => {
   extendSettingsRoute();
 
   extend(IndexSidebar.prototype, 'navItems', (items) => {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of shebaoting/rss.
+ * This file is part of shebaoting/flarum-rss.
  *
  * Copyright (c) 2024 Shebaoting.
  *

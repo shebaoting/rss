@@ -1,12 +1,15 @@
 {
-    "name": "shebaoting/rss",
+    "name": "shebaoting/flarum-rss",
     "description": "A Flarum extension that aggregates and displays RSS/Atom feeds.",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "keywords": [
         "flarum"
     ],
     "type": "flarum-extension",
     "license": "MIT",
+    "replace": {
+        "shebaoting/rss": "self.version"
+    },
     "require": {
         "php": "^8.3",
         "flarum/core": "^2.0.0-beta",

@@ -1,5 +1,5 @@
 {
-    "name": "@shebaoting/rss",
+    "name": "@shebaoting/flarum-rss",
     "private": true,
     "version": "0.0.0",
     "devDependencies": {

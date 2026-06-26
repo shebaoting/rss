@@ -1,6 +1,6 @@
 # RSS
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/shebaoting/rss.svg)](https://packagist.org/packages/shebaoting/rss) [![Total Downloads](https://img.shields.io/packagist/dt/shebaoting/rss.svg)](https://packagist.org/packages/shebaoting/rss)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/shebaoting/flarum-rss.svg)](https://packagist.org/packages/shebaoting/flarum-rss) [![Total Downloads](https://img.shields.io/packagist/dt/shebaoting/flarum-rss.svg)](https://packagist.org/packages/shebaoting/flarum-rss)
 
 A Flarum 2.x extension that aggregates RSS/Atom feeds, displays blog articles in a dedicated feed page or the main discussion list, and lets users start native Flarum discussions from RSS articles only when comments are needed.
 
@@ -35,7 +35,7 @@ A Flarum 2.x extension that aggregates RSS/Atom feeds, displays blog articles in
 Install with Composer:
 
 ```sh
-composer require shebaoting/rss:"^2.0"
+composer require shebaoting/flarum-rss:"^2.0"
 php flarum migrate
 php flarum cache:clear
 ```
@@ -45,9 +45,16 @@ Enable the extension from the Flarum admin panel.
 ## Updating
 
 ```sh
-composer update shebaoting/rss:"^2.0"
+composer update shebaoting/flarum-rss:"^2.0"
 php flarum migrate
 php flarum cache:clear
+```
+
+If your forum still requires the old package name, switch the Composer requirement first:
+
+```sh
+composer remove shebaoting/rss --no-update
+composer require shebaoting/flarum-rss:"^2.0" -W
 ```
 
 ## Admin Configuration
@@ -131,7 +138,7 @@ The command is scheduled hourly through Flarum's scheduler. Make sure your serve
 Version `2.0.0` and later targets Flarum 2.x. If you are upgrading from an older Flarum 1.x installation, keep your existing database tables and run migrations:
 
 ```sh
-composer require shebaoting/rss:"^2.0"
+composer require shebaoting/flarum-rss:"^2.0"
 php flarum migrate
 php flarum cache:clear
 ```
@@ -140,5 +147,5 @@ Existing RSS source and item data is reused by the Flarum 2.x version.
 
 ## Links
 
-- [Packagist](https://packagist.org/packages/shebaoting/rss)
-- [GitHub](https://github.com/shebaoting/rss)
+- [Packagist](https://packagist.org/packages/shebaoting/flarum-rss)
+- [GitHub](https://github.com/shebaoting/flarum-rss)

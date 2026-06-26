@@ -36,7 +36,7 @@ RSS 是一个面向 Flarum 2.x 的 RSS/Atom 聚合扩展。它可以抓取外部
 使用 Composer 安装：
 
 ```sh
-composer require shebaoting/rss:"^2.0"
+composer require shebaoting/flarum-rss:"^2.0"
 php flarum migrate
 php flarum cache:clear
 ```
@@ -46,9 +46,16 @@ php flarum cache:clear
 ## 更新
 
 ```sh
-composer update shebaoting/rss:"^2.0"
+composer update shebaoting/flarum-rss:"^2.0"
 php flarum migrate
 php flarum cache:clear
+```
+
+如果你的站点仍然使用旧包名，请先切换 Composer 依赖：
+
+```sh
+composer remove shebaoting/rss --no-update
+composer require shebaoting/flarum-rss:"^2.0" -W
 ```
 
 ## 后台设置
@@ -134,7 +141,7 @@ php flarum rss:fetch "https://example.com/feed.xml"
 `2.0.0` 之后的版本用于 Flarum 2.x。如果你之前在 Flarum 1.x 使用过这个扩展，可以保留旧数据库数据，然后执行：
 
 ```sh
-composer require shebaoting/rss:"^2.0"
+composer require shebaoting/flarum-rss:"^2.0"
 php flarum migrate
 php flarum cache:clear
 ```
