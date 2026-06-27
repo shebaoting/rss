@@ -6,7 +6,7 @@ import LinkButton from 'flarum/common/components/LinkButton';
 import Button from 'flarum/common/components/Button';
 import Switch from 'flarum/common/components/Switch';
 import FieldSet from 'flarum/common/components/FieldSet';
-import MixedDiscussionList from './components/MixedDiscussionList';
+import MixedDiscussionList, { isPlainDiscussionIndex, shouldMixRssIntoDiscussionList } from './components/MixedDiscussionList';
 import RssSubmitModal from './components/RssSubmitModal';
 import { globalRssIndexEnabled, resetRssIndexOverride, RSS_INDEX_PREFERENCE_KEY, rssIndexEnabled, setRssIndexOverride } from './rssIndexState';
 
@@ -109,13 +109,13 @@ app.initializers.add('shebaoting-rss', () => {
   });
 
   extend(IndexPage.prototype, 'contentItems', (items) => {
-    if (rssIndexEnabled() && items.has('discussionList')) {
+    if (shouldMixRssIntoDiscussionList(app.discussions) && items.has('discussionList')) {
       items.setContent('discussionList', <MixedDiscussionList state={app.discussions} />);
     }
   });
 
   extend(IndexPage.prototype, 'actionItems', (items) => {
-    if (!globalRssIndexEnabled()) return;
+    if (!globalRssIndexEnabled() || !isPlainDiscussionIndex(app.discussions)) return;
 
     const enabled = rssIndexEnabled();
 

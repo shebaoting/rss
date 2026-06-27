@@ -17,6 +17,16 @@ function hasActiveFilter(filter) {
   });
 }
 
+export function isPlainDiscussionIndex(state) {
+  const params = state.getParams();
+
+  return !params.q && !params.tags && !hasActiveFilter(params.filter) && (!params.sort || params.sort === 'latest');
+}
+
+export function shouldMixRssIntoDiscussionList(state) {
+  return rssIndexEnabled() && isPlainDiscussionIndex(state);
+}
+
 export default class MixedDiscussionList extends Component {
   oninit(vnode) {
     super.oninit(vnode);
@@ -38,11 +48,7 @@ export default class MixedDiscussionList extends Component {
   }
 
   shouldMix() {
-    if (!rssIndexEnabled()) return false;
-
-    const params = this.attrs.state.getParams();
-
-    return !params.q && !hasActiveFilter(params.filter) && (!params.sort || params.sort === 'latest');
+    return shouldMixRssIntoDiscussionList(this.attrs.state);
   }
 
   pageSize() {
